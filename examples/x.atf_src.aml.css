@@ -1,0 +1,126 @@
+body {
+    font-size: 12pt;
+    width: 800px;
+    margin: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.header-1 {
+    text-align: center;
+    font-size: 38pt;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+.header-2 {
+    font-size: 32pt;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.header-3 {
+    font-size: 24pt;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.header-4 {
+    font-size: 18pt;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.header-5 {
+    font-size: 18pt;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.paragraph {
+    line-height: 16pt;
+    text-align: justify;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.inline-bold {
+    font-weight: bold;
+}
+.inline-italic {
+    font-style: italic;
+}
+.inline-strike {
+    text-decoration: line-through;
+}
+
+.inline-code {
+    font-size: 10pt;
+    font-family: menlo;
+
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(200, 200, 200);
+}
+
+.block-quote {
+
+}
+
+.block-math {
+
+}
+
+.block-code {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    font-size: 11pt;
+    font-family: menlo;
+    overflow: scroll;
+
+    color: white;
+    background-color: black;
+}
+
+.ul {}
+.li {}
+
+.numbered-list {}
+
+.bulleted-list {}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+th {
+    border: 3px solid black;
+    border-collapse: collapse;
+    border-top: 3px solid black;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+    border: 1px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-collapse: collapse;
+}
+
+

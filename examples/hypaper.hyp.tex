@@ -1,0 +1,181 @@
+\documentclass{article}
+
+\usepackage{color}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{soul}
+\usepackage{graphicx}
+\graphicspath{ {./} }
+\usepackage{listings}
+\lstset{aboveskip=3mm, belowskip=3mm, showstringspaces=false, columns=flexible, basicstyle={\small\ttfamily}, numbers=none, breaklines=true, breakatwhitespace=true, tabsize=3}
+\begin{document}
+
+\begin{center}
+\huge{ Lorem Ipsum }\\[0.4cm]\large{ The Ipsumloreium }\\[0.75cm]\large{ Henry Blanchette }\\[0.5cm]\large{ January 1, 2000 }\\[1.0cm]
+
+\begin{abstract}
+ Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis.
+
+
+\end{abstract}
+
+\end{center}\section{ Lorem ipsum dolor }
+
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. 
+
+\[
+    f(x) = \frac{d}{dx} \int_0^x f(x) dx
+\]
+
+ Nulla convallis augue libero, $ f(x) = 1 + x $ et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. \texttt{ def f(x): return x + 1 } Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. 
+
+
+
+\begin{itemize}
+\item 
+      item A
+    
+\item  item B
+    
+\item  item C
+
+
+
+\end{itemize}
+
+\begin{enumerate}
+\item 
+      item 1
+    
+\item  item 2
+    
+\item  item 3
+
+
+
+\end{enumerate}\subsection{ Maecenas imperdiet }
+
+ Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. 
+
+
+
+\begin{lstlisting}
+
+
+add_child :: Block -> BlockChild -> Block
+add_child block child = case child of
+    -- new child is code
+    (ChildCode x) -> case (block_children block) of
+        -- if most recent child is code, append x to that
+        (ChildCode y : cs_) -> set_children block $ ChildCode (y ++ x) : cs_
+        -- otherwise, prepend to children
+        _ -> prepend_blockchild block $ ChildCode x
+    -- new child is a block
+    (ChildBlock x) -> prepend_blockchild block $ ChildBlock x
+
+add_parition :: Block -> Block
+add_parition block = case (block_children block) of
+    (ChildCode "":_) -> block
+    _ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""
+
+
+
+\end{lstlisting}
+
+ Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis. 
+
+
+
+ Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. 
+
+\subsubsection{ Lorem ipsum}
+
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. 
+
+
+
+ Nulla convallis augue libero, et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. 
+
+\begin{figure}[h] \includegraphics{meme.png} \centering \end{figure}
+
+ Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. 
+
+
+
+ Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis. 
+
+
+
+ Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. 
+
+\begin{figure}[h] \includegraphics{meme.png} 
+\captionsetup{labelformat=empty} 
+\caption{Figure 1. Charles Murray meme} \centering \end{figure}
+
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. 
+
+
+
+ Nulla convallis augue libero, et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. 
+
+
+
+ Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. 
+
+
+
+ Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis. 
+
+
+
+ Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. 
+
+
+
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. 
+
+
+
+ Nulla convallis augue libero, et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. 
+
+
+
+ Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. 
+
+
+
+ Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis. 
+
+
+
+ Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. 
+
+
+\section*{Bibliography}
+
+\noindent  Blanchette, Henry. \textit{The Book 1 that was Published}. Book Publishing Inc. 2001. 
+
+
+
+\noindent  Blanchette, Henry. \textit{The Book 2 that was Published}. Book Publishing Inc. 2001. 
+
+
+
+\noindent  Blanchette, Henry. \textit{The Book 3 that was Published}. Book Publishing Inc. 2001. 
+
+
+
+\noindent  Blanchette, Henry. \textit{The Book 4 that was Published}. Book Publishing Inc. 2001. 
+
+
+
+\noindent  Blanchette, Henry. \textit{The Book 5 that was Published}. Book Publishing Inc. 2001. 
+
+
+
+\noindent  Blanchette, Henry. \textit{The Book 6 that was Published}. Book Publishing Inc. 2001. 
+
+
+\end{document}

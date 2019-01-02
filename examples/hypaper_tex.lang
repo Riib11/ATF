@@ -1,0 +1,70 @@
+filetype tex
+
+root true * <|<!DOCTYPE html><html>|> <|$1|>
+<|
+<head>
+    <link rel="stylesheet" type="text/css" href="hypaper.css">
+    <script type="text/javascript" src="hypaper.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js" async></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['\$<<','>>\$'] ], displayMath: [ ['\$\$<<','>>\$\$'] ], processEscapes: false }, "HTML-CSS": { fonts: ["TeX"] } });</script>
+</head>
+</html>
+|>
+
+--       false 1 <||>
+verbatim false 1 <|$1|>
+
+head         true  * <|<head>|> <|$1|> <|</head>|>
+js-src-async false 1 <|<script type="text/javascript" src="$1" async></script>|>
+js-src       false 1 <|<script type="text/javascript" src="$1"></script>|>
+js           false 1 <|<script type="text/javascript">$1</script>|>
+css-src      false 1 <|<link rel="stylesheet" type="text/css" href="$1">|>
+css          false 1 <|<style type="text/css">$1</style>|>
+title        false 1 <|<title>$1</title>|>
+
+body true * <|<body>|> <|$1|> <|</body>|>
+
+##### true * <|<div class="header-5">|>  <|$1|> <|</div>|>
+####  true * <|<div class="header-4">|>  <|$1|> <|</div>|>
+###   true * <|<div class="header-3">|>  <|$1|> <|</div>|>
+##    true * <|<div class="header-2">|>  <|$1|> <|</div>|>
+#     true * <|<div class="header-1">|>  <|$1|> <|</div>|>
+p     true * <|<div class="paragraph">|> <|$1|> <|</div>|>
+
+$$    false 1 <|<div class="block-math">\$\$<<$1>>\$\$</div>|>
+$     false 1 <|$<<$1$>>|>
+
+``` false 1 <|<pre class="block-code">$1</pre>|>
+`   false 1 <|span class="inline-code">$1</span>|>
+
+image  true 2 <|<img src="$1" alt="$2">|>
+image  true 1 <|<img src="$1">|>
+figure true 2
+<|
+<center class="figure">
+    <img src="$1">
+    <div>$2</div>
+</center>
+|>
+
+'' true * <|<span class="inline-quote">|> <|$1|> <|</span>|>
+>  true * <|<div class="block-quote">|>   <|$1|> <|</div>|>
+
+bulleted true * <|<ul class="bulleted">|> <|<li>$1</li>|> <|</ul>|>
+numbered true * <|<ol class="numbered">|> <|<li>$1</li>|> <|</ol>|>
+
+@ true 2 <|<a class="link" href="$1">$2</a>|>
+@ true 1 <|<a class="link" href="$1">$1</a>|>
+
+* true * <|<span class="bold">|>      <|$1|> <|</span>|>
+_ true * <|<span class="italic">|>    <|$1|> <|</span>|>
+^ true * <|<span class="smallcaps">|> <|$1|> <|</span>|>
+~ true * <|<span class="strike">|>    <|$1|> <|</span>|>
+
+table true * <|<table class="table">|> <|$1|> <|</table>|>
+hr    true * <|<tr class="hrow">|>     <|$1|> <|</tr>|>
+tr    true * <|<tr class="row">|>      <|$1|> <|</tr>|>
+
+foot true * <|<div class="foot">|> <|$1|> <|</div>|>
+bibliography true * <|<div class="bibliography"><div class="bib-title">Bibliography</div>|> <|$1|> <|</div>|>
+bib-item true * <|<div class="bib-item">|> <|$1|> <|</div>|>

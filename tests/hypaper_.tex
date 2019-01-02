@@ -1,0 +1,37 @@
+\documentclass{article}
+
+%-------------------------------------------------------------------------------
+% PACKAGES
+%-------------------------------------------------------------------------------
+
+\usepackage{amsmath}
+
+\usepackage{color}
+
+\usepackage{listings}
+\lstset{
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+}
+
+%-------------------------------------------------------------------------------
+% DOCUMENT
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+Hello, this is some smallcaps: {\sc hello world}. But this is not
+
+\begin{lstlisting}
+def f(x):
+    return x + 1
+\end{lstlisting}
+
+\end{document}

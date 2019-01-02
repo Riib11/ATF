@@ -1,0 +1,163 @@
+<script type="text/javascript"></script>
+
+<!DOCTYPE html><html><head><title> This is a Title</title><link rel="stylesheet" type="text/css" href=" x.atf_src.aml.css"><script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js " async></script> <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [ ['$<<','>>$'] ],
+            displayMath: [ ['$$<<','>>$$'] ],
+            processEscapes: false
+        },
+        "HTML-CSS": { fonts: ["TeX"] }
+    });
+</script><body>
+<div class="header-1"> Lorem Ipsum</div>
+<div class="paragraph"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. </div>
+<div class="block-math">$$<<
+    f(x) = \frac{d}{dx} \int_0^x f(x) dx
+>>$$</div>
+<div class="paragraph"> Nulla convallis augue libero, et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. </div>
+<div class="paragraph"> Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. </div>
+<pre class="block-code">
+
+add_child :: Block -> BlockChild -> Block
+add_child block child = case child of
+    -- new child is code
+    (ChildCode x) -> case (block_children block) of
+        -- if most recent child is code, append x to that
+        (ChildCode y : cs_) -> set_children block $ ChildCode (y ++ x) : cs_
+        -- otherwise, prepend to children
+        _ -> prepend_blockchild block $ ChildCode x
+    -- new child is a block
+    (ChildBlock x) -> prepend_blockchild block $ ChildBlock x
+
+add_parition :: Block -> Block
+add_parition block = case (block_children block) of
+    (ChildCode "":_) -> block
+    _ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""_ -> prepend_blockchild block $ ChildCode ""
+
+</pre><div class="paragraph"> Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis. </div>
+<div class="paragraph"> Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. </div>
+<div class="paragraph"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. </div>
+<div class="paragraph"> Nulla convallis augue libero, et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. </div>
+<div class="paragraph"> Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. </div>
+<div class="paragraph"> Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis. </div>
+<div class="paragraph"> Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. </div>
+<div class="paragraph"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. </div>
+<div class="paragraph"> Nulla convallis augue libero, et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. </div>
+<div class="paragraph"> Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. </div>
+<div class="paragraph"> Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis. </div>
+<div class="paragraph"> Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. </div>
+<div class="paragraph"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. </div>
+<div class="paragraph"> Nulla convallis augue libero, et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. </div>
+<div class="paragraph"> Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. </div>
+<div class="paragraph"> Sed porta sollicitudin lacus, non tempor nibh facilisis eu. Pellentesque consectetur est eu nulla semper, id ultricies libero auctor. Suspendisse ullamcorper sodales consequat. Ut non nisl mauris. Nullam venenatis nisl sed tincidunt iaculis. Donec eu fringilla dolor. Donec quis magna velit. Vestibulum ultricies libero diam, quis venenatis eros lacinia vulputate. Curabitur imperdiet ante et erat placerat suscipit. Vestibulum magna augue, sollicitudin nec placerat et, pretium in felis. </div>
+<div class="paragraph"> Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. </div>
+<div class="paragraph"> Some items, ya know: <ul class="ul"><li class="li"> this is an item </li><li class="li"> this is an item </li><li class="li"> this is an item </li><li class="li"> this is an item </li><li class="li"> this is an item </li><li class="li"> this is an item </li></ul></div>
+<div class="paragraph"> A special bulleted list: <ul class="bulleted-list"><li>
+      item 1
+    </li><li> item 2
+    </li><li> item 3
+    </li><li> item 4
+</li></ul></div>
+<div class="paragraph"> A special numbered list: <ol class="numbered-list"><li>
+      item 1
+    </li><li> item 2
+    </li><li> item 3
+    </li><li> item 4
+</li></ol></div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is some <span class="inline-bold">bold text</span>. This is some <span class="inline-strike">striked text</span>. This is some <span class="inline-italic">italic text</span>.
+
+    This is some inline math: $<< f(x) = x^2. >>$
+
+    This is some block math: <div class="block-math">$$<< g(x) = \int_{x=0}^1 f(x) dx. >>$$</div>
+</div>
+<div class="block-quote"> This is a quote </div>
+<div class="paragraph">
+    This is some inline code: <span class="inline-code"> f = lambda x: x + 1 </span></div>
+<div class="paragraph">
+    This is some block code:
+</div>
+<pre class="block-code">
+def f(x):
+    return x + 1
+</pre><div class="header-2"> This is a 2 Header!</div>
+<div class="header-3"> This is a 3 Header!</div>
+<div class="header-4"> This is a 4 Header!</div>
+<div class="header-5"> This is a 5 Header!</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is some <span class="inline-bold">bold text</span>. This is some <span class="inline-strike">striked text</span>. This is some <span class="inline-italic">italic text</span>.
+
+    This is some inline math: $<< f(x) = x^2 >>$
+
+    This is some block math: <div class="block-math">$$<< g(x) = \int_{x=0}^1 f(x) dx >>$$</div>
+</div>
+<div class="block-quote"> This is a quote </div>
+<div class="paragraph">
+    This is some inline code: <span class="inline-code"> f = lambda x: x + 1 </span></div>
+<div class="paragraph">
+    This is some block code:
+</div>
+<pre class="block-code">
+def f(x):
+    return x + 1
+</pre><div class="header-2"> This is a 2 Header!</div>
+<div class="header-3"> This is a 3 Header!</div>
+<div class="header-4"> This is a 4 Header!</div>
+<div class="header-5"> This is a 5 Header!</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is a nice little paragraph! Looking forward to making good use of this.
+</div>
+<div class="paragraph">
+    This is some <span class="inline-bold">bold text</span>. This is some <span class="inline-strike">striked text</span>. This is some <span class="inline-italic">italic text</span>.
+
+    This is some inline math: $<< f(x) = x^2 >>$
+
+    This is some block math: <div class="block-math">$$<< g(x) = \int_{x=0}^1 f(x) dx >>$$</div>
+</div>
+<div class="block-quote"> This is a quote </div>
+<div class="paragraph">
+    This is some inline code: <span class="inline-code"> f = lambda x: x + 1 </span></div>
+<div class="paragraph">
+    This is some block code:
+</div>
+<pre class="block-code">
+def f(x):
+    return x + 1
+</pre><table class="table"><tr class="hrow"><th> Category 1 </th><th> Category 2 </th><th> Category 3 </th></tr><tr class="row"><td> 4 </td><td> 5 </td><td> 6 </td></tr><tr class="row"><td> 7 </td><td> 8 </td><td> 9 </td></tr><tr class="row"><td> 10 </td><td> 11 </td><td> 12 </td></tr><tr class="row"><td> 13 </td><td> 14 </td><td> 15 </td></tr><tr class="row"><td> 16 </td><td> 17 </td><td> 18 </td></tr></table>
+</body></head></html>
