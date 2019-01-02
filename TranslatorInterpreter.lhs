@@ -29,7 +29,7 @@ import Translator
 
 interpret_translator :: TransCode -> IO Translator
 interpret_translator transcode = -- TODO: implementation
-    return $ get_translator transcode
+    error "unimplemented"
 
 \end{code}
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
