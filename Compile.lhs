@@ -46,7 +46,6 @@ import Debug
 import Utilities
 import Translator
 import TranslatorInterpreter
-import TranslatorLibrary
 
 \end{code}
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

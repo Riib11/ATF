@@ -45,6 +45,7 @@ main = do
             putStrLn $ "-------------------------------------------------------"
             putStrLn $ "compilation status:"
             compile fp_trans fp_srcs
+        "logo" : [] -> print_logo
         -- other commands
         command : _ -> error $ "unrecognized command: " ++ command
         []          -> error "use `atf help <topic>` for help"
@@ -54,6 +55,22 @@ list_to_string ss = case ss of
     []       -> ""
     (x:[])   -> x
     (x:y:xs) -> x ++ ", " ++ y ++ (list_to_string xs)
+
+print_logo :: IO ()
+print_logo = foldl (>>) (putStr "") $ map putStrLn
+    [ ""
+    , "                                      ┐"
+    , "                                  ╽   ╽   ╽     ╖"
+    , "                               ╓─╼╬───╬───╬───╼═╣"
+    , "                             ┐═╢  ╿   ╿   ╿"
+    , "                             ╽    ╽   ╽   ╽   ╖"
+    , "                             ╠╾──╼╣   ╢   ╠─╼═╣"
+    , "                             ╿    ╿   ╿   ╿"
+    , "                             ╽    ╽   ╽   ╽"
+    , "                            ─╬─  ─╬  ─╬─  ╬─┐"
+    , "                             ╿    ╿   ╿   ╿"
+    , "                                  └"
+    , "" ]
 
 \end{code}
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
