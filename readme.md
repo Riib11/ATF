@@ -4,13 +4,10 @@ ATF implements an abstractly-defined transpilation flow. ATF takes as input a so
 
 ## Prerequisites
 
-|--------------------------|-------------------------------|
 | Description              | Link                          |
 |--------------------------|-------------------------------|
 | Glasgow Haskell Compiler | https://www.haskell.org/ghc/  |
-|--------------------------|-------------------------------|
 | Git Command Line Tools   | https://git-scm.com/downloads |
-|--------------------------|-------------------------------|
 
 ## Installation
 
