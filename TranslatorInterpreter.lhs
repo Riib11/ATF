@@ -48,9 +48,9 @@ interpret_translator transcode =
                             trans_new =
                                 add_block title block_format does_nest trans
                         in do
-                            putStrLn $ "title  : " ++ title
-                            putStrLn $ "before : " ++ (show ws)
-                            putStrLn $ "rest   : " ++ (show rest)
+                            -- putStrLn $ "title  : " ++ title
+                            -- putStrLn $ "before : " ++ (show ws)
+                            -- putStrLn $ "rest   : " ++ (show rest)
                             helper rest trans_new
                     ArgsStar ->
                         let formatter = make_star_formatter
@@ -59,12 +59,15 @@ interpret_translator transcode =
                                 add_block title block_format does_nest trans
                         in helper rest trans_new
             _ -> error
-                $ "couldn't interpret as translator code: " ++ (show words)
+                $ "couldn't interpret as translator code: " ++
+                    (if length words < 10
+                        then show words
+                        else show $ take 10 words) ++ "..."
         splitted_transcode = transcode `splitted_with` [" ", "\n", "<|", "|>"]
         empty_translator = Translator
             [] (Block "root" [] (\xs -> join xs) True) (\fp -> fp)
     in do
-        foldl (>>) (putStr "") (map (putStrLn . show) splitted_transcode)
+        -- foldl (>>) (putStr "") (map (putStrLn . show) splitted_transcode)
         helper splitted_transcode empty_translator
 
 set_filetype :: String -> Translator -> Translator
