@@ -35,6 +35,8 @@ module Translator
 , BlockChild(ChildCode, ChildBlock)
 ) where
 
+import Utilities
+
 type SourceCode = String
 type TransCode  = String
 type TargetCode = String
@@ -57,11 +59,11 @@ data BlockChild
 instance Show Block where
     show block
         = "{ " ++ (block_title block) ++ " : "
-        ++ (show $ reverse $ block_children block) ++ " }"
+        ++ (show $ reverse $ map show $ block_children block) ++ " }"
 
 instance Show BlockChild where
     show child = case child of
-        ChildCode x -> "\"" ++ x ++ "\""
+        ChildCode x -> x
         ChildBlock x -> show x
 
 \end{code}

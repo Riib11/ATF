@@ -1,0 +1,11 @@
+filetype test
+
+root true * <|{begin}|>
+<|
+$1
+|>
+<|{end}|>
+
+# true 1 <|($1)|>
+
+* true * <|[|> <|($1)|> <|]|>
