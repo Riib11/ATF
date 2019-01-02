@@ -2,7 +2,7 @@ module Debug
 ( debug
 ) where
 
-_DEBUG = True
+_DEBUG = False
 
 debug :: String -> IO ()
 debug msg = if _DEBUG

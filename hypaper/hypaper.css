@@ -7,6 +7,11 @@
     src: url(Spectral-Regular.ttf);
 }
 
+@font-face {
+    font-family: ProFont;
+    src: url(ProFont.ttf);
+}
+
 /***********************************/
 /* HTML */
 /***********************************/
@@ -71,6 +76,13 @@ body {
     text-align: justify;
 }
 
+.abstract-title {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-bottom: 5px;
+}
+
 /***********************************/
 /* BODY */
 /***********************************/
@@ -111,7 +123,8 @@ body {
 }
 
 .block-math {
-
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .inline-math {
@@ -122,8 +135,8 @@ body {
     display: block;
     margin-top: 40px;
     margin-bottom: 50px;
-    font-family: menlo;
-    font-size: 11pt;
+    font-family: ProFont;
+    font-size: 14pt;
     width: 750px;
     margin-left: -100px;
     
@@ -143,8 +156,8 @@ body {
 }
 
 .inline-code {
-    font-family: menlo;
-    font-size: 10pt;
+    font-family: ProFont;
+    font-size: 13pt;
 }
 
 .image {
@@ -224,14 +237,17 @@ body {
 }
 
 .bibliography {
-    margin-top: 50px;
+    margin-top: 150px;
     padding-left: 20px;
     padding-right: 20px;
 }
 
 .bib-title {
-    font-size: 18pt;
-    margin-bottom: 20px;
+    font-size: 12pt;
+    font-variant: small-caps;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .bib-item {

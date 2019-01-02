@@ -27,6 +27,7 @@ module TranslatorInterpreter
 
 import Translator
 import Utilities
+import Debug
 
 interpret_translator :: TransCode -> IO Translator
 interpret_translator transcode =
@@ -69,7 +70,7 @@ interpret_translator transcode =
         empty_translator = Translator
             [] (Block "root" [] (\xs -> join xs) True) (\fp -> fp)
     in do
-        -- foldl (>>) (putStr "") (map (putStrLn . show) splitted_transcode)
+        foldl (>>) (putStr "") (map (debug . show) splitted_transcode)
         helper splitted_transcode empty_translator
 
 set_filetype :: String -> Translator -> Translator
@@ -119,7 +120,7 @@ break_text string =
             "" -> case work of
                 "" -> []
                 _  -> [Left work]
-            ('\\': x : xs) -> error $ "got escape for: " ++ [x] -- helper xs (work ++ [x])
+            -- ('\\': x : xs) -> error $ "got escape for: " ++ [x]
             ('$' : x : xs) -> case (readMaybe [x] :: Maybe Int) of
                 Nothing -> helper xs (work ++ ['$'] ++ [x])
                 Just i  -> case work of
