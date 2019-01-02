@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**TranslatorInterpreter.lhs
-(./TranslatorInterpreter.lhs
+**Translator.lhs
+(./Translator.lhs
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -59,8 +59,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks17
 )
-(./TranslatorInterpreter.aux)
-\openout1 = `TranslatorInterpreter.aux'.
+No file Translator.aux.
+\openout1 = `Translator.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
@@ -74,7 +74,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -112,23 +111,23 @@ LaTeX Font Info:    ... okay on input line 13.
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] (./TranslatorInterpreter.aux) ) 
+(./Translator.aux) ) 
 Here is how much of TeX's memory you used:
- 754 strings out of 493014
- 10623 string characters out of 6133351
- 79312 words of memory out of 5000000
+ 752 strings out of 493014
+ 10494 string characters out of 6133351
+ 73312 words of memory out of 5000000
  4357 multiletter control sequences out of 15000+600000
  4107 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 24i,4n,32p,168b,248s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmtt10.pfb>
-Output written on TranslatorInterpreter.pdf (3 pages, 39240 bytes).
+ 24i,4n,32p,157b,140s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmtt10.pfb>
+Output written on Translator.pdf (1 page, 33044 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 20 PDF objects out of 1000 (max. 8388607)
+ 13 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
