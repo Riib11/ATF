@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "[*] install ATF"
+echo "[*] install global `atf` command (may require password)"
+sudo cp atf /usr/bin/bash/
