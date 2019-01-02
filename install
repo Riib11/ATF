@@ -1,5 +1,21 @@
 #!/bin/bash
 
-echo "[*] install ATF"
-echo "[*] install global `atf` command (may require password)"
-sudo cp atf /usr/bin/bash/
+echo "[*] installing ATF"
+echo "[*] installing global 'atf' command (may require password)"
+sudo cp ATF/atf /usr/local/bin/
+echo "----"
+echo "SUCCESS: finished installing ATF. execute 'atf help' for help"
+
+echo ""
+echo "          ┐"
+echo "      ╽   ╽   ╽     ╖"
+echo "   ╓─╼╬───╬───╬───╼═╣"
+echo " ┐═╢  ╿   ╿   ╿"
+echo " ╽    ╽   ╽   ╽   ╖"
+echo " ╠╾──╼╣   ╢   ╠─╼═╣"
+echo " ╿    ╿   ╿   ╿"
+echo " ╽    ╽   ╽   ╽"
+echo "─╬─  ─╬  ─╬─  ╬─┐"
+echo " ╿    ╿   ╿   ╿"
+echo "      └"
+echo ""
