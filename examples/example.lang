@@ -1,6 +1,6 @@
-filetype tex
+filetype html
 
-root true * <|<!DOCTYPE html><html>|> <|$1|>
+root True * <|<!DOCTYPE html><html>|> <|$1|>
 <|
 <head>
     <link rel="stylesheet" type="text/css" href="hypaper.css">
@@ -11,33 +11,37 @@ root true * <|<!DOCTYPE html><html>|> <|$1|>
 </html>
 |>
 
--- false 1       <| |>
-verbatim false 1 <|$1|>
+-- False 1       <| |>
+verbatim False 1 <|$1|>
 
-head true *     <|<div class="head">|> <|$1|> <|</div>|>
+head True *     <|<div class="head">|> <|$1|> <|</div>|>
 
-title true 1    <|<div class="title" id="title">$1</div>|>
-subtitle true 1 <|<div class="subtitle">$1</div>|> 
-author true 1   <|<div class="author">$1</div>|>
-date true 1     <|<div class="date">$1</div>|>
-abstract true 1 <|<div class="abstract">$1</div>|>
+title True 1    <|<div class="title" id="title">$1</div>|>
+subtitle True 1 <|<div class="subtitle">$1</div>|> 
+author True 1   <|<div class="author">$1</div>|>
+date True 1     <|<div class="date">$1</div>|>
+abstract True 1 <|<div class="abstract">$1</div>|>
 
-body true * <|<body>|> <|$1|> <|</body>|>
+body True * <|<body>|> <|$1|> <|</body>|>
 
-### true *   <|<div class="header-3">|>  <|$1|> <|</div>|>
-## true *    <|<div class="header-2">|>  <|$1|> <|</div>|>
-# true *     <|<div class="header-1">|>  <|$1|> <|</div>|>
-p true *     <|<div class="paragraph">|> <|$1|> <|</div>|>
+### True *   <|<div class="subsubsection">|> <|$1|> <|</div>|>
+## True *    <|<div class="subsection">|>    <|$1|> <|</div>|>
+# True *     <|<div class="section">|>       <|$1|> <|</div>|>
+p True *     <|<div class="paragraph">|>     <|$1|> <|</div>|>
 
-$$ false 1 <|<div class="block-math">\$\$<<$1>>\$\$</div>|>
-$ false 1  <|$<<$1$>>|>
+(#)$$ False 1 <|<div class="block-math">\$\$<<$1>>\$\$</div>|>
+(#)$ False 1  <|\$<<$1>>\$|>
 
-``` false 1 <|<pre class="block-code">$1</pre>|>
-` false 1   <|span class="inline-code">$1</span>|>
+$$ False 1 <|<div class="block-math">\$\$<<$1>>\$\$</div>|>
+$ False 1  <|\$<<$1>>\$|>
 
-image true 2 <|<img src="$1" alt="$2">|>
-image true 1 <|<img src="$1">|>
-figure true 2
+
+``` False 1 <|<pre class="block-code">$1</pre>|>
+` False 1   <|<span class="inline-code">$1</span>|>
+
+image True 2 <|<center class="image"><img src="$1" alt="$2"></center>|>
+image True 1 <|<center class="image"><img src="$1"></center>|>
+figure True 2
 <|
 <center class="figure">
     <img src="$1">
@@ -45,25 +49,25 @@ figure true 2
 </center>
 |>
 
-'' true * <|<span class="inline-quote">|> <|$1|> <|</span>|>
-> true *  <|<div class="block-quote">|>   <|$1|> <|</div>|>
+'' True * <|<span class="inline-quote">|> <|$1|> <|</span>|>
+> True *  <|<div class="block-quote">|>   <|$1|> <|</div>|>
 
-bulleted true * <|<ul class="bulleted">|> <|<li>$1</li>|> <|</ul>|>
-numbered true * <|<ol class="numbered">|> <|<li>$1</li>|> <|</ol>|>
+bulleted True * <|<ul class="bulleted">|> <|<li>$1</li>|> <|</ul>|>
+numbered True * <|<ol class="numbered">|> <|<li>$1</li>|> <|</ol>|>
 
-@ true 2 <|<a class="link" href="$1">$2</a>|>
-@ true 1 <|<a class="link" href="$1">$1</a>|>
+@ True 2 <|<a class="link" href="$1">$2</a>|>
+@ True 1 <|<a class="link" href="$1">$1</a>|>
 
-* true * <|<span class="bold">|>      <|$1|> <|</span>|>
-_ true * <|<span class="italic">|>    <|$1|> <|</span>|>
-^ true * <|<span class="smallcaps">|> <|$1|> <|</span>|>
-~ true * <|<span class="strike">|>    <|$1|> <|</span>|>
+* True * <|<span class="bold">|>      <|$1|> <|</span>|>
+_ True * <|<span class="italic">|>    <|$1|> <|</span>|>
+^ True * <|<span class="smallcaps">|> <|$1|> <|</span>|>
+~ True * <|<span class="strike">|>    <|$1|> <|</span>|>
 
-table true * <|<table class="table">|> <|$1|> <|</table>|>
-hr true *    <|<tr class="hrow">|>     <|$1|> <|</tr>|>
-tr true *    <|<tr class="row">|>      <|$1|> <|</tr>|>
+table True * <|<table class="table">|> <|$1|> <|</table>|>
+hr True *    <|<tr class="hrow">|>     <|$1|> <|</tr>|>
+tr True *    <|<tr class="row">|>      <|$1|> <|</tr>|>
 
-foot true * <|<div class="foot">|> <|$1|> <|</div>|>
+foot True * <|<div class="foot">|> <|$1|> <|</div>|>
 
-bibliography true * <|<div class="bibliography"><div class="bib-title">Bibliography</div>|> <|$1|> <|</div>|>
-bib-item true * <|<div class="bib-item">|> <|$1|> <|</div>|>
+bibliography True * <|<div class="bibliography"><div class="bib-title">Bibliography</div>|> <|$1|> <|</div>|>
+bib-item True * <|<div class="bib-item">|> <|$1|> <|</div>|>

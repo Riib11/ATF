@@ -9,6 +9,7 @@ module Utilities
 , begins_with
 , splitted_with
 , at
+, readMaybe
 ) where
 
 beheaded_by :: String -> String -> Maybe String
@@ -40,15 +41,7 @@ is_empty_string s = case s of
         then is_empty_string xs
         else False
 
-string_to_bool :: String -> Bool
-string_to_bool s = case s of
-    "true" -> True
-    "false" -> False
-    _ -> error $ "couldn't interpret '" ++ s ++ "' as a Bool"
 
-
-string_to_int :: String -> Int
-string_to_int = read
 
 begins_with :: String -> String -> Bool
 s `begins_with` x = case (s, x) of
@@ -93,3 +86,17 @@ at list index =
         helper (x:xs) i = xs `at` (i - 1)
     in helper list index
 
+readMaybe :: Read a => String -> Maybe a
+readMaybe s = case reads s of
+    [(val, "")] -> Just val
+    _           -> Nothing
+
+string_to_bool :: String -> Bool
+string_to_bool s = case (readMaybe s :: Maybe Bool) of
+    Nothing -> error $ "could not parse '" ++ s ++ "' as Bool"
+    Just x  -> x
+
+string_to_int :: String -> Int
+string_to_int s = case (readMaybe s :: Maybe Int) of
+    Nothing -> error $ "could not parse '" ++ s ++ "' as Int"
+    Just x  -> x

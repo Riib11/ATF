@@ -3,7 +3,7 @@
 /***********************************/
 
 @font-face {
-    font-family: Spectral
+    font-family: Spectral;
     src: url(Spectral-Regular.ttf);
 }
 
@@ -21,6 +21,8 @@ html {
 body {
     margin: auto;
     width: 700px;
+
+    font-family: Spectral;
 
     background-color: white;
     box-shadow:
@@ -78,13 +80,14 @@ body {
 }
 
 .section {
-    font-size: 24pt;
+    font-size: 18pt;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-weight: bold;
 }
 
 .subsection {
-    font-size: 18pt;
+    font-size: 16pt;
     margin-top: 20px;
     margin-bottom: 16px;
 }
@@ -161,7 +164,7 @@ body {
 }
 
 .figure div {
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .block-quote {

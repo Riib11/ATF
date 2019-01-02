@@ -33,9 +33,10 @@ interpret_translator transcode =
     let helper :: [String] -> Translator -> IO Translator
         helper words trans = case words of
             [] -> return trans
-            (""  :ws) -> helper ws trans
-            (" " :ws) -> helper ws trans
-            ("\n":ws) -> helper ws trans
+            ("(#)":ws) -> helper (extract_comment ws) trans
+            (""  :ws)  -> helper ws trans
+            (" " :ws)  -> helper ws trans
+            ("\n":ws)  -> helper ws trans
             ("filetype":" ":filetype : ws) ->
                 helper ws $ set_filetype filetype trans
             (title:" ":nests_str:" ":args_str : ws) ->
@@ -63,7 +64,8 @@ interpret_translator transcode =
                     (if length words < 10
                         then show words
                         else show $ take 10 words) ++ "..."
-        splitted_transcode = transcode `splitted_with` [" ", "\n", "<|", "|>"]
+        splitted_transcode = transcode `splitted_with`
+            [" ", "\n", "<|", "|>","(#)"]
         empty_translator = Translator
             [] (Block "root" [] (\xs -> join xs) True) (\fp -> fp)
     in do
@@ -73,6 +75,11 @@ interpret_translator transcode =
 set_filetype :: String -> Translator -> Translator
 set_filetype s (Translator blocks root _) =
     Translator blocks root (\fp -> fp ++ "." ++ s)
+
+extract_comment :: [String] -> [String]
+extract_comment ws = case ws of
+    ("\n":rest) -> rest
+    (_:rest) -> extract_comment rest
 
 -- gets the next <|...|> enclosed text
 extract_next_text :: [String] -> Maybe (String, [String])
@@ -98,7 +105,7 @@ data ArgsType
 string_to_argstype :: String -> ArgsType
 string_to_argstype s = case s of
     "*" -> ArgsStar
-    int_str -> ArgsNumber (read int_str :: Int)
+    int_str -> ArgsNumber $ string_to_int int_str
 
 data ArgReference = ArgRefIndex Int
 
@@ -112,13 +119,15 @@ break_text string =
             "" -> case work of
                 "" -> []
                 _  -> [Left work]
-            ('\\' : x : xs) -> case work of
-                "" -> helper xs ""
-                _  -> (Left work) : helper xs ""
-            ('$' : x : xs) -> case work of
-                "" -> (Right $ ArgRefIndex $ string_to_int [x]) : helper xs ""
-                _  -> (Left work) : (Right $ ArgRefIndex $ string_to_int [x])
-                        : helper xs ""
+            ('\\': x : xs) -> error $ "got escape for: " ++ [x] -- helper xs (work ++ [x])
+            ('$' : x : xs) -> case (readMaybe [x] :: Maybe Int) of
+                Nothing -> helper xs (work ++ ['$'] ++ [x])
+                Just i  -> case work of
+                    "" -> (Right $ ArgRefIndex i)
+                            : helper xs ""
+                    _  -> (Left work)
+                            : (Right $ ArgRefIndex i)
+                            : helper xs ""
             (x : xs) -> helper xs (work ++ [x])
     in helper string ""
 

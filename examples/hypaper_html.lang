@@ -1,4 +1,4 @@
-filetype tex
+filetype html
 
 root true * <|<!DOCTYPE html><html>|> <|$1|>
 <|
@@ -31,14 +31,14 @@ body true * <|<body>|> <|$1|> <|</body>|>
 #     true * <|<div class="header-1">|>  <|$1|> <|</div>|>
 p     true * <|<div class="paragraph">|> <|$1|> <|</div>|>
 
-$$    false 1 <|<div class="block-math">\$\$<<$1>>\$\$</div>|>
-$     false 1 <|$<<$1$>>|>
+$$    false 1 <|<div class="block-math">$$<<$1>>$$</div>|>
+$     false 1 <|$<<$1>>$|>
 
 ``` false 1 <|<pre class="block-code">$1</pre>|>
 `   false 1 <|span class="inline-code">$1</span>|>
 
-image  true 2 <|<img src="$1" alt="$2">|>
-image  true 1 <|<img src="$1">|>
+image  true 2 <|<center class="image"><img src="$1" alt="$2"></center>|>
+image  true 1 <|<center class="image"><img src="$1"></center>|>
 figure true 2
 <|
 <center class="figure">
