@@ -1,8 +1,8 @@
 # Abstract Transpilation Framework
 
-![ATF logo](ATF-logo.png)
-
 ATF implements an abstractly-defined transpilation flow. ATF takes as input a source text written in ATF-src syntax and a transpilation definition written in ATF-lang syntax, and writes as output the transpiled source.
+
+![ATF logo](ATF-logo.png)
 
 
 
@@ -28,15 +28,17 @@ ATF implements an abstractly-defined transpilation flow. ATF takes as input a so
 Change to the directory where you want to install the ATF repository. Execute the following:
 
 ```bash
-git clone https://github.com/Riib11/ATF.git
-sh ATF/install
+git clone https://github.com/Riib11/ATF.git # clone repository to this directory
+./ATF/install                               # run install script
 ```
+
+*Updating*. To update a previous installation, run
+
+
 
 ### Windows
 
 _Unimplemented_
-
-
 
 ## Documentation
 
