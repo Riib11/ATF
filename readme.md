@@ -25,16 +25,19 @@ ATF implements an abstractly-defined transpilation flow. ATF takes as input a so
 
 ### MacOS
 
-Change to the directory where you want to install the ATF repository. Execute the following:
+To install ATF, change to the directory where you want to install the ATF repository and then execute the following:
 
 ```bash
 git clone https://github.com/Riib11/ATF.git # clone repository to this directory
 ./ATF/install                               # run install script
 ```
 
-*Updating*. To update a previous installation, run
+*Updating*. To update a previous installation of ATF, change to inside your local clone of the ATF repository and then execute the following:
 
-
+```bash
+git fetch
+git pull
+```
 
 ### Windows
 
