@@ -80,7 +80,8 @@ add_parition block = case (block_children block) of
 <|p Nulla convallis augue libero, et pulvinar ligula pellentesque a. Sed ullamcorper tellus in nisi ornare, non posuere leo ultrices. Nam at mi mollis, bibendum lacus sed, semper erat. Aliquam molestie ultrices lectus sit amet iaculis. In imperdiet, leo sed porttitor viverra, quam libero malesuada ipsum, non iaculis odio tortor vel arcu. Mauris fermentum libero sit amet ultricies accumsan. Cras eget varius elit. Etiam facilisis lorem tellus, ut consectetur urna lobortis non. Suspendisse vitae mattis eros. Mauris at semper lorem. Curabitur sit amet sem tempus, facilisis arcu sed, fermentum eros. Proin eu sem odio. Sed non neque vel est vehicula molestie. Morbi sed pharetra urna, vitae tincidunt diam. Sed lobortis, quam eu consequat posuere, justo enim viverra lacus, nec molestie dolor dolor vel purus. Phasellus gravida ipsum quis ipsum facilisis, a sollicitudin dolor aliquam. |>
 
 
-<|image|meme.png|>
+<|-- <|image|meme.png|>
+<|image|tree.gif|>
 
 <|p Maecenas imperdiet vel orci eget consequat. Pellentesque id nibh ac quam molestie blandit. Phasellus cursus egestas neque, vitae pharetra augue luctus in. Vestibulum pharetra tellus ac odio iaculis, sed laoreet nisi mattis. Proin id justo tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vel vehicula nisi, sit amet eleifend mauris. Proin vel ligula ut lectus pulvinar rhoncus. Phasellus at odio a ex commodo semper vel a odio. Maecenas lobortis felis ante, sed ullamcorper mauris faucibus ultrices. Donec placerat, magna at condimentum tincidunt, metus est posuere ex, nec congue est neque a odio. Donec eget nisi faucibus, imperdiet odio eget, blandit lorem. Aenean luctus tempor tortor non imperdiet. Nunc laoreet pulvinar orci in tempus. |>
 
@@ -88,7 +89,8 @@ add_parition block = case (block_children block) of
 
 <|p Curabitur vitae tristique metus. Pellentesque maximus velit nibh, mollis auctor lectus dignissim at. Phasellus eu pulvinar elit. In finibus consectetur varius. In rutrum laoreet pretium. Morbi ante dui, dictum et rutrum vel, tempus in urna. Nam a nulla mattis, ultricies elit et, vehicula felis. Maecenas ac auctor eros, eget ornare nisi. |>
 
-<|figure|meme.png|Figure 2. Poorly drawn meme, for the second time|>
+<|-- <|figure|meme.png|Figure 2. Poorly drawn meme, for the second time|>
+<|figure|tree.gif|Figure 2. Artist interpretation of a tree.|>
 
 
 <|p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed nisl nec massa dignissim vehicula. Duis semper massa ac risus elementum porttitor. Donec quis blandit odio. Vivamus non nulla dignissim, maximus justo ut, venenatis mauris. Quisque ut mattis sapien. Ut sodales orci vel ligula malesuada, vitae lacinia odio congue. Praesent ut mauris gravida ipsum feugiat pharetra vel vitae mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin nisi non nibh condimentum dictum. Maecenas lacinia condimentum nulla non consectetur. Mauris ornare gravida arcu id vehicula. Praesent ut magna sit amet mi laoreet maximus. Donec ultrices, ante in venenatis ultrices, quam quam ultrices leo, ut euismod felis augue sit amet risus. Pellentesque quam odio, egestas ut venenatis sit amet, viverra in mi. Praesent a ligula justo. Aliquam erat volutpat. |>

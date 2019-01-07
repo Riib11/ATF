@@ -19,8 +19,6 @@ ATF implements an abstractly-defined transpilation flow. ATF takes as input a so
 | Glasgow Haskell Compiler | https://www.haskell.org/ghc/  |
 | Git Command Line Tools   | https://git-scm.com/downloads |
 
-
-
 ## Installation
 
 ### MacOS
@@ -32,11 +30,11 @@ git clone https://github.com/Riib11/ATF.git # clone repository to this directory
 ./ATF/install                               # run install script
 ```
 
-*Updating*. To update a previous installation of ATF, change to inside your local clone of the ATF repository and then execute the following:
+**Updating**. To update a previous installation of ATF, change to inside your local clone of the ATF repository and then execute the following:
 
 ```bash
-git fetch
-git pull
+git fetch # check for updates
+./install # reinstall
 ```
 
 ### Windows
@@ -51,5 +49,5 @@ ATF uses the literate haskell style for documentation. Each haskell module (`.lh
 
 ## In Progress
 
-#### Translator to implement:
+#### Translator sto implement:
 * markdown -> html

@@ -1,0 +1,83 @@
+filetype html
+
+root True * <|<!DOCTYPE html><html>|> <|$1|>
+<|<head>
+    <!-- litgen styles -->
+    <link rel="stylesheet" type="text/css" href="litgen.css">
+    <script type="text/javascript" src="litgen.js"></script>
+    <!-- math formatting -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js" async></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['\$<<','>>\$'] ], displayMath: [ ['\$\$<<','>>\$\$'] ], processEscapes: false }, "HTML-CSS": { fonts: ["TeX"] } });</script>
+    <!-- code highlighting -->
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/ascetic.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head></html>|>
+
+-- False 1       <| |>
+verbatim False 1 <|$1|>
+
+head True *     <|<div class="head">|> <|$1|> <|</div>|>
+
+title True 1    <|<div class="title" id="title">$1</div>|>
+subtitle True 1 <|<div class="subtitle">$1</div>|> 
+author True 1   <|<div class="author">$1</div>|>
+date True 1     <|<div class="date">$1</div>|>
+abstract True 1
+<|<div class="abstract">
+<center class="abstract-title">abstract</center>
+<div>$1</div>
+</div>|>
+
+body True * <|<body>|> <|$1|> <|</body>|>
+
+### True *   <|<div class="subsubsection">|> <|$1|> <|</div>|>
+## True *    <|<div class="subsection">|>    <|$1|> <|</div>|>
+# True *     <|<div class="section">|>       <|$1|> <|</div>|>
+p True *     <|<div class="paragraph">|>     <|$1|> <|</div>|>
+
+$$ False 1 <|<div class="block-math">\$\$<<$1>>\$\$</div>|>
+$ False 1  <|\$<<$1>>\$|>
+
+(#) only printed in documentation
+```doc False 1 <|<pre class="block-code"><code class="python">$1</code></pre>|>
+(#) only printed in source code
+```src False 1 <||>
+(#) printed in documentation and source code
+``` False 1    <|<pre class="block-code"><code class="python">$1</code></pre>|>
+(#) only printed in documentation
+` False 1      <|<pre class="inline-code">$1</pre>|>
+
+image True 2 <|<center class="image"><img src="$1" alt="$2"></center>|>
+image True 1 <|<center class="image"><img src="$1"></center>|>
+figure True 2
+<|
+<center class="figure">
+    <img src="$1">
+    <div>$2</div>
+</center>
+|>
+
+'' True * <|<span class="inline-quote">|> <|$1|> <|</span>|>
+> True *  <|<div class="block-quote">|>   <|$1|> <|</div>|>
+
+bulleted True * <|<ul class="bulleted">|> <|<li>$1</li>|> <|</ul>|>
+numbered True * <|<ol class="numbered">|> <|<li>$1</li>|> <|</ol>|>
+
+@ True 2 <|<a class="link" href="$1">$2</a>|>
+@ True 1 <|<a class="link" href="$1">$1</a>|>
+
+* True * <|<span class="bold">|>      <|$1|> <|</span>|>
+_ True * <|<span class="italic">|>    <|$1|> <|</span>|>
+^ True * <|<span class="smallcaps">|> <|$1|> <|</span>|>
+~ True * <|<span class="strike">|>    <|$1|> <|</span>|>
+
+table True * <|<table class="table">|> <|$1|> <|</table>|>
+hr True *    <|<tr class="hrow">|>     <|$1|> <|</tr>|>
+tr True *    <|<tr class="row">|>      <|$1|> <|</tr>|>
+
+foot True * <|<div class="foot">|> <|$1|> <|</div>|>
+
+bibliography True * <|<div class="bibliography"><div class="bib-title">Bibliography</div>|> <|$1|> <|</div>|>
+bib-item True * <|<div class="bib-item">|> <|$1|> <|</div>|>
