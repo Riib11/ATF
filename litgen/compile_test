@@ -1,0 +1,2 @@
+atf compile litgen_html.lang test.litgen
+atf compile litgen_py.lang   test.litgen
